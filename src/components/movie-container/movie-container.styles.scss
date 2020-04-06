@@ -1,0 +1,71 @@
+@import '../../App.scss';
+
+.movie-container {
+  margin-top: 20px;
+  display: flex;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.822));
+
+  .movie-image {
+    width: 40%;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .movie-info {
+    width: 60%;
+    padding: 40px;
+
+    color: #fafafaa9;
+
+    h1 {
+      color: white;
+    }
+
+    .tagline {
+      font-size: 1.3em;
+      font-family: $font-family-1;
+      color: $text-color-2;
+    }
+
+    .additional-details {
+      font-family: $font-family-1;
+
+      .production-and-genres {
+        margin: 20px 0;
+
+        .genre-list{
+          color: $text-color-2;
+        }
+      }
+
+      .release-details {
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: center;
+        // align-items: center;
+
+        .relese-details-box {
+          width: 50%;
+          padding: 10px 0;
+          // text-align: center;
+          .meta-data {
+            font-size: 1.5rem;
+            color: $text-color-2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  width: 100%;
+  max-width: 140px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  display: block;
+  height: 55px;
+}

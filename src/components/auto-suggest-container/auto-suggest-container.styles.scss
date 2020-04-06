@@ -1,0 +1,81 @@
+@import '../../App.scss';
+
+.auto-suggest-container {
+  padding-top: 15px;
+  width: 60%;
+
+  .react-autosuggest__container {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    // padding: 0 15px;
+
+  }
+
+  // .react-autosuggest__container--open {
+  // }
+
+  .react-autosuggest__input {
+    width: 100%;
+    padding-left: 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 7px;
+    line-height: 20px;
+    font-size: 1.3rem;
+    color: $text-color-1;
+  }
+
+  // .react-autosuggest__input--open {
+  // }
+
+  .react-autosuggest__input--focused {
+    outline: none;
+  }
+
+  .react-autosuggest__suggestions-container {
+    background-color: rgba(0, 0, 0, 0.87);
+    position: absolute;
+    width: 100%;
+    color: white;
+    opacity: 0;
+    transition: 400ms;
+  }
+
+  .react-autosuggest__suggestions-container--open {
+    opacity: 1;
+  }
+
+  .react-autosuggest__suggestions-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .react-autosuggest__suggestion {
+    padding: 5px 0px 5px 15px;
+    font-weight: normal;
+    transition: 100ms;
+  }
+
+  // .react-autosuggest__suggestion--first {
+  // }
+  .matchedStr{
+    opacity: 0.6;
+  }
+  
+  .react-autosuggest__suggestion--highlighted {
+    color: $text-color-2;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    transition: 100ms;
+    cursor: pointer;
+  }
+  // .react-autosuggest__section-container {
+  // }
+  // .react-autosuggest__section-container--first {
+  // }
+  // .react-autosuggest__section-titl {
+  // }
+
+ 
+}
