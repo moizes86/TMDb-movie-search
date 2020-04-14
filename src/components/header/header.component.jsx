@@ -1,14 +1,14 @@
 import React from 'react';
-import AutoSuggestContainer from '../auto-suggest-container/auto-suggest-container.component';
-import TheMovieDBImageContainer from '../the-movie-db-image-container/the-movie-db-image-container.component';
+import AutoSuggestContainer from './auto-suggest-container/auto-suggest-container.component';
+import LogoContainer from './logo-container/logo-container.component';
 
-import './header.styles.scss';
+import { HeaderContainer } from './header.styles';
 
 const Header = () => (
-  <div className='header'>
-      <TheMovieDBImageContainer />
+  <HeaderContainer>
+      <LogoContainer />
       <AutoSuggestContainer />
-  </div>
+  </HeaderContainer>
 );
 
 export default Header;

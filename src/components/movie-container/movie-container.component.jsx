@@ -2,10 +2,19 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import './movie-container.styles.scss';
-
-const imageNotAvailable =
-  'https://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg';
+import {
+  MovieContainerStyled,
+  MovieImageContainer,
+  MovieInfoContainer,
+  Title,
+  Overview,
+  AdditionalDetails,
+  ProductionAndGenres,
+  ProductionList,
+  ReleaseDetails,
+  ReleaseDetailsBox,
+  FancyContent
+} from './movie-container.styles';
 
 const MovieContainer = ({
   title,
@@ -20,55 +29,49 @@ const MovieContainer = ({
   vote_average,
 }) => {
   return (
-    <div className='movie-container'>
-      <div className='movie-image'>
-        <img
-          src={
-            poster_path !== '---'
-              ? `https://image.tmdb.org/t/p/w500${poster_path}`
-              : imageNotAvailable
-          }
-          alt=''
-        />
-      </div>
-      <div className='movie-info'>
-        <h1>{title}</h1>
-        <span className='tagline'> {tagline} </span>
-        <p>{overview}</p>
-        <div className='additional-details'>
-          <div className='production-and-genres'>
-            <span className='genre-list'> {genres} </span>
+    <MovieContainerStyled>
+      <MovieImageContainer>
+        {poster_path ? (
+          <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt='' />
+        ) : null}
+      </MovieImageContainer>
+
+      <MovieInfoContainer>
+        <Title>{title}</Title>
+        <FancyContent> {tagline} </FancyContent>
+        <Overview>{overview}</Overview>
+
+        <AdditionalDetails>
+          <ProductionAndGenres>
+            <FancyContent> {genres} </FancyContent>
             <br />
-            <span className='production-list'>{production_companies}</span>
-          </div>
+            <ProductionList>{production_companies}</ProductionList>
+          </ProductionAndGenres>
 
-          <div className='release-details '>
-            <div className='relese-details-box'>
-              {' '}
+          <ReleaseDetails>
+            <ReleaseDetailsBox>
               Original Release: <br />
-              <span className='meta-data'> {release_date} </span>
-            </div>
+              <FancyContent> {release_date} </FancyContent>
+            </ReleaseDetailsBox>
 
-            <div className='relese-details-box'>
+            <ReleaseDetailsBox>
               Running Time:
               <br />
-              <span className='meta-data'> {runtime} mins</span>
-            </div>
+              <FancyContent> {runtime} mins</FancyContent>
+            </ReleaseDetailsBox>
 
-            <div className='relese-details-box'>
-              {' '}
-              Box Office: <br /> <span className='meta-data'>{revenue}</span>
-            </div>
+            <ReleaseDetailsBox>
+              Box Office: <br /> <FancyContent>{revenue}</FancyContent>
+            </ReleaseDetailsBox>
 
-            <div className='relese-details-box'>
-              {' '}
-              Vote Average: <br />{' '}
-              <span className='meta-data'> {vote_average} / 10</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <ReleaseDetailsBox>
+              Vote Average: <br />
+              <FancyContent> {vote_average} / 10</FancyContent>
+            </ReleaseDetailsBox>
+          </ReleaseDetails>
+        </AdditionalDetails>
+      </MovieInfoContainer>
+    </MovieContainerStyled>
   );
 };
 

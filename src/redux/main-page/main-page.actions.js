@@ -5,10 +5,9 @@ import API_KEY from '../../api_key';
 
 
 
-export const onFetchMovieAsync = movieID => {
+export const onFetchMovieAsync = (movieID) => {
   return dispatch => {
     const url = `https://api.themoviedb.org/3/movie/${movieID}?&api_key=${API_KEY}`;
-
     dispatch(onFetchMovieStart());
 
     fetch(url).then(res =>

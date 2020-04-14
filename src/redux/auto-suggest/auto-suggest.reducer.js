@@ -3,7 +3,8 @@ import AutoSuggestTypes from './auto-suggest.types';
 const INITIAL_STATE = {
   value: '',
   suggestions: [],
-  isLoading: false,
+  isFetching: false,
+  suggestion: null,
   errorMessage: null
 };
 const autoSuggestReducer = (state = INITIAL_STATE, action) => {
@@ -29,14 +30,14 @@ const autoSuggestReducer = (state = INITIAL_STATE, action) => {
     case AutoSuggestTypes.LOAD_SUGGESTIONS_START:
       return {
         ...state,
-        isLoading: true
+        isFetching: true
       };
 
     case AutoSuggestTypes.LOAD_SUGGESTIONS_FETCH:
       return {
         ...state,
         suggestions: action.suggestions,
-        isLoading: false
+        isFetching: false
       };
 
     case AutoSuggestTypes.ON_GET_SUGGESTION_VALUE:
@@ -50,6 +51,12 @@ const autoSuggestReducer = (state = INITIAL_STATE, action) => {
         ...state
       };
 
+     case AutoSuggestTypes.ON_CLEAR_INPUT:
+       return {
+         ...state,
+         value: action.payload
+       };
+       
     default:
       return state;
   }
