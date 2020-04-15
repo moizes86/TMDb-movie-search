@@ -4,6 +4,7 @@ export const AutoSuggestContainerStyled = styled.div`
   padding: 15px 15px 0 0;
   width: 53%;
   display: flex;
+  font-family: ${props=> props.theme.basicFont};
   @media (max-width: 640px) {
     width: 90%;
   }
@@ -28,6 +29,7 @@ export const AutoSuggestContainerStyled = styled.div`
     font-size: 1.2rem;
     color: whitesmoke;
     transition: 0.5s;
+  font-family: ${props=> props.theme.basicFont};
 
     @media (max-width: 640px) {
       font-size: 1.1rem;

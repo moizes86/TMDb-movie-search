@@ -19,10 +19,14 @@ export const FixedBackgroundGradient = styled.div`
 `;
 
 export const AppPadding = styled.div`
-  padding: 30px 150px;
+  padding: 30px 0;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
   font-family: ${(props) => props.theme.basicFont};
 
   @media (max-width: 640px) {
     padding: 10px 5px;
+    width: 97%;
   }
 `;

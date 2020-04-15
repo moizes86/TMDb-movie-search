@@ -15,7 +15,7 @@ export const MovieImageContainer = styled.div`
   width: 50%;
   img {
     max-width: 100%;
-    min-height: 80%;
+    min-height: auto;
   }
 
   @media (max-width: 640px) {
@@ -27,7 +27,7 @@ export const MovieImageContainer = styled.div`
 
 export const MovieInfoContainer = styled.div`
   width: 50%;
-  padding: 30px;
+  padding: 20px;
   color: ${(props) => props.theme.defaultFontColor};
 
   @media (max-width: 640px) {
@@ -41,11 +41,13 @@ export const MovieInfoContainer = styled.div`
 export const Title = styled.h1`
   color: white;
   text-align: center;
+  font-size: 2.5rem;
+  margin: 10px auto;
+  text-transform: uppercase;
 `;
 
 export const Overview = styled.p`
   line-height: ${(props) => props.theme.lineHeight1};
-  font-size: ${(props) => props.theme.fontSizeSmaller};
   opacity: 0.8;
   z-index:0;
 `;
@@ -60,6 +62,7 @@ export const ProductionAndGenres = styled.div`
 export const FancyContent = styled.span`
   color: ${(props) => props.theme.fancyFontColor};
   font-size: ${(props) => props.theme.fancyFontSize};
+  font-family: ${(props) => props.theme.fancyFont};
 `;
 
 export const ProductionList = styled.span`
@@ -71,10 +74,12 @@ export const ProductionList = styled.span`
 export const ReleaseDetails = styled.div`
   display: flex;
   flex-wrap: wrap;
+  font-size: 0.9rem;
 `;
 
 export const ReleaseDetailsBox = styled.div`
   font-family: ${(props) => props.theme.fancyFont};
   width: 50%;
   padding: 10px 0;
+  font-size: 0.9rem;
 `;
