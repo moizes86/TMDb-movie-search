@@ -43,12 +43,14 @@ class App extends React.Component {
       <CSSTransition in={mounted} appear={true} timeout={500} classNames='fade'>
         <AppBackgroundImage style={background}>
           <FixedBackgroundGradient>
-          <GlobalFonts />
-          <AppPadding>
-              <Header />
-              <MovieContainer />
-              <Footer />
-              </AppPadding>
+            <GlobalFonts />
+            <AppPadding>
+              <div className='x'>
+                <Header />
+                <MovieContainer />
+                <Footer />
+              </div>
+            </AppPadding>
           </FixedBackgroundGradient>
         </AppBackgroundImage>
       </CSSTransition>

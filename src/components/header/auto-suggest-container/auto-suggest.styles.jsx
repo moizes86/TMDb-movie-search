@@ -4,7 +4,7 @@ export const AutoSuggestContainerStyled = styled.div`
   padding: 15px 15px 0 0;
   width: 53%;
   display: flex;
-  font-family: ${props=> props.theme.basicFont};
+  font-family: ${(props) => props.theme.basicFont};
   @media (max-width: 640px) {
     width: 90%;
   }
@@ -29,7 +29,7 @@ export const AutoSuggestContainerStyled = styled.div`
     font-size: 1.2rem;
     color: whitesmoke;
     transition: 0.5s;
-  font-family: ${props=> props.theme.basicFont};
+    font-family: ${(props) => props.theme.basicFont};
 
     @media (max-width: 640px) {
       font-size: 1.1rem;
@@ -58,8 +58,8 @@ export const AutoSuggestContainerStyled = styled.div`
     color: black;
     width: 90%;
     opacity: 0;
-    min-height: 60px;
-    transition: 0.3s;
+    /* min-height: 60px; */
+    transition: 0.2s ease-in-out;
     z-index: 99;
   }
 
@@ -67,7 +67,7 @@ export const AutoSuggestContainerStyled = styled.div`
     margin-top: 10px;
     box-shadow: 2px 6px 13px 10px rgba(0, 0, 0, 0.5);
     opacity: 1;
-    transition: 0.3s;
+    transition: 0.1s;
   }
 
   .react-autosuggest__suggestions-list {
@@ -88,6 +88,8 @@ export const AutoSuggestContainerStyled = styled.div`
   }
 
   .react-autosuggest__suggestion--highlighted {
+    background-color: ${(props) => props.theme.fancyFontColor};
+    opacity: 0, 8;
     font-weight: bolder;
     transition: 0.2s;
     cursor: pointer;
