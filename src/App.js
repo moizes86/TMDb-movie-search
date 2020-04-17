@@ -45,15 +45,14 @@ class App extends React.Component {
           <FixedBackgroundGradient>
             <GlobalFonts />
             <AppPadding>
-              <div className='x'>
                 <Header />
                 <MovieContainer />
                 <Footer />
-              </div>
             </AppPadding>
           </FixedBackgroundGradient>
         </AppBackgroundImage>
       </CSSTransition>
+
     );
   }
 }

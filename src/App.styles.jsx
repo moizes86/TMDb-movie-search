@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const OverflowHiddenX = styled.div`
+  overflow-x: hidden;
+  width: 100vw;
+`;
+
 export const AppBackgroundImage = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
