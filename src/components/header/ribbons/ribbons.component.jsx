@@ -1,24 +1,48 @@
 import React from 'react';
-import {
-  RibbonsContainer,
-  Ribbon,
-  Text,
-} from './ribbons.styles.jsx';
 
-const Ribbons = () => (
+import { connect } from 'react-redux';
+import { onToggleModal } from '../../../redux/modal/modal.actions';
+
+import { RibbonsContainer, Ribbon, Text } from './ribbons.styles';
+
+const Ribbons = ({ onToggleModal }) => {
+  return (
     <RibbonsContainer>
-      <Ribbon className='ribbonA'>
-        <Text className='ribbonA'>A</Text>
+      <Ribbon className='ribbonA' onClick={onToggleModal}>
+        <Text className='ribbonA'>ABOUT </Text>
       </Ribbon>
       <Ribbon className='ribbonB'>
-        <Text className='ribbonB'>B</Text>
+        <Text className='ribbonB'>
+          <a
+            href='https://github.com/moizes86/TMDb-movie-search'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            VIEW CODE
+          </a>
+        </Text>
       </Ribbon>
       <Ribbon className='ribbonC'>
-        <Text className='ribbonC'>C</Text>
+        <Text className='ribbonC'>
+          <a
+            href='https://skempin.github.io/reactjs-tmdb-app/'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            BASED ON THIS
+          </a>
+        </Text>
       </Ribbon>
     </RibbonsContainer>
-);
+  );
+};
 
-export default Ribbons;
+// const mapStateToProps = state=>{
+// }
 
-// <Text> HOW </Text>
+const mapDispatchToProps = (dispatch) => ({
+  onToggleModal: () => dispatch(onToggleModal('content-about')),
+});
+
+export default connect(null, mapDispatchToProps)(Ribbons);
+

@@ -7,7 +7,7 @@ import store from './redux/store';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import { theme } from './theme.styles';
-import './index.scss';
+import './index.css';
 import { ThemeProvider } from 'styled-components';
 
 ReactDOM.render(

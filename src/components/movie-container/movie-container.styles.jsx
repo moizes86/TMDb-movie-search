@@ -33,7 +33,7 @@ export const MovieInfoContainer = styled.div`
   @media (max-width: 640px) {
     margin: auto;
     width: auto;
-    padding: 10px 15px;
+    padding: 10px 5px;
     text-align:center;
   }
 `;

@@ -1,0 +1,79 @@
+/* .ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; */
+
+/* animation-name: rollIn;
+    animation-duration: .5s; */
+
+/* } */
+
+/* .ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+    
+} */
+
+/* .ReactModal__Content--before-close{
+  animation-name: rollOut;
+  animation-duration: 1s;
+} */
+
+.overlay-default {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.452);
+}
+
+@keyframes rollIn {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rollOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+}
+
+.content-about {
+  color: red;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.content-about--open {
+  animation-name: rollIn;
+  animation-duration: .5s;
+}
+
+.content-about--close {
+  animation-name: rollOut;
+  animation-duration: .5s;
+}

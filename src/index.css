@@ -1,0 +1,30 @@
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .loader{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spinner-main_page {
+    height: 100vh;
+  }
+
+  .spinner-auto_suggest {
+    height: 100%;
+    margin-right: 10px;
+
+    @media only screen and (max-width: 640px) {
+      height: 30px;
+    }
+  }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }

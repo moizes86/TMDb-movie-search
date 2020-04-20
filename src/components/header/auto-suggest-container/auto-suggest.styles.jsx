@@ -5,6 +5,7 @@ export const AutoSuggestContainerStyled = styled.div`
   width: 53%;
   display: flex;
   font-family: ${(props) => props.theme.basicFont};
+
   @media (max-width: 640px) {
     width: 90%;
   }
@@ -56,11 +57,15 @@ export const AutoSuggestContainerStyled = styled.div`
     background-color: rgba(245, 245, 245, 0.95);
     position: absolute;
     color: black;
-    width: 90%;
+    width: 95%;
+    margin-left:10px;
     opacity: 0;
-    /* min-height: 60px; */
-    transition: 0.2s ease-in-out;
-    z-index: 99;
+    transition: 0.6s ease-in-out;
+
+    @media (max-width: 640px) {
+      margin-left:0;
+      width:100%;
+    }
   }
 
   .react-autosuggest__suggestions-container--open {

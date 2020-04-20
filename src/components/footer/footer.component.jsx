@@ -7,8 +7,7 @@ const Footer = () => (
     <FooterAnchor
       href='https://skempin.github.io/reactjs-tmdb-app/'
       target='_blank'
-      rel='noopener
-  noreferrer'
+      rel='noopener noreferrer'
     >
       Based On This Project
     </FooterAnchor>
@@ -16,8 +15,7 @@ const Footer = () => (
     <FooterAnchor
       href='https://github.com/moizes86/TMDb-movie-search'
       target='_blank'
-      rel='noopener
-    noreferrer'
+      rel='noopener noreferrer'
     >
       View Code
     </FooterAnchor>

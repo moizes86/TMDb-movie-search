@@ -1,22 +1,27 @@
 import React from 'react';
 import GlobalFonts from './assets/fonts/fonts';
 
-import MovieContainer from './components/movie-container/movie-container.component';
+import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
+import MovieContainer from './components/movie-container/movie-container.component';
+import MyModal from './components/my-modal/my-modal.component';
 import { connect } from 'react-redux';
 import { onFetchMovieAsync } from './redux/main-page/main-page.actions';
-import Header from './components/header/header.component';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import Loader from 'react-loader-spinner';
 
-import { CSSTransition } from 'react-transition-group';
-import './transitions.css';
-
+// * * * * STYLES * * * *//
 import {
   AppBackgroundImage,
   FixedBackgroundGradient,
   AppPadding,
 } from './App.styles';
+
+// LOADER
+import { LoaderContainer } from './spinner.styles';
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+
+import { CSSTransition } from 'react-transition-group';
+import './transitions.css';
 
 class App extends React.Component {
   componentDidMount() {
@@ -38,21 +43,23 @@ class App extends React.Component {
           };
 
     return isLoading ? (
-      <Loader className='loader' type='TailSpin' color='#00BFFF' />
+      <LoaderContainer className='spinner-app'>
+        <Loader type='TailSpin' color='#00BFFF' />
+      </LoaderContainer>
     ) : (
       <CSSTransition in={mounted} appear={true} timeout={500} classNames='fade'>
         <AppBackgroundImage style={background}>
           <FixedBackgroundGradient>
             <GlobalFonts />
             <AppPadding>
-                <Header />
-                <MovieContainer />
-                <Footer />
+            <MyModal/>
+              <Header />
+              <MovieContainer />
+              <Footer />
             </AppPadding>
           </FixedBackgroundGradient>
         </AppBackgroundImage>
       </CSSTransition>
-
     );
   }
 }

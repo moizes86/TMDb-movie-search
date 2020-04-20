@@ -3,6 +3,8 @@ import Autosuggest from 'react-autosuggest';
 import { connect } from 'react-redux';
 import { AutoSuggestContainerStyled } from './auto-suggest.styles';
 import ClearInputButton from '../../clear-input-button/clear-input-button.component';
+import Loader from 'react-loader-spinner';
+import { LoaderContainer } from '../../../spinner.styles';
 
 import {
   updateInputValue,
@@ -20,6 +22,7 @@ const AutoSuggestContainer = ({
   onSuggestionsFetchRequested,
   onClearSuggestions,
   onSelected,
+  isFetching,
 }) => {
   const inputProps = {
     placeholder: 'Search a Movie...',
@@ -59,14 +62,19 @@ const AutoSuggestContainer = ({
         inputProps={inputProps}
         onSuggestionSelected={onSelected}
       />
+      {isFetching ? (
+        <LoaderContainer className='spinner-auto_suggest'>
+          <Loader type='TailSpin' color='#00BFFF' width={20} height={20} />
+        </LoaderContainer>
+      ) : null}
       {value ? <ClearInputButton /> : null}
     </AutoSuggestContainerStyled>
   );
 };
 
 const mapStateToProps = (state) => {
-  const { value, suggestions, isLoading, suggestion } = state.autoSuggest;
-  return { value, suggestions, isLoading, suggestion };
+  const { value, suggestions, isFetching, suggestion } = state.autoSuggest;
+  return { value, suggestions, isFetching, suggestion };
 };
 
 const mapDispatchToProps = (dispatch) => ({

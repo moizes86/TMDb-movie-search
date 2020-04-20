@@ -29,9 +29,8 @@ export const AppPadding = styled.div`
   margin-right: auto;
   margin-left: auto;
   font-family: ${(props) => props.theme.basicFont};
-  .x{
+  .x {
     overflow: hidden;
-
   }
   @media (max-width: 640px) {
     padding: 10px 5px;

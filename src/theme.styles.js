@@ -15,4 +15,3 @@ export const theme = {
   ribbonSideLength: sideLength,
   ribbonDiagonalLength: diagonalLength,
 };
-
