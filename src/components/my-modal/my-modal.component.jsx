@@ -6,6 +6,7 @@ import { onToggleModal } from '../../redux/modal/modal.actions';
 import Modal from 'react-modal';
 
 import './my-modal.transitions.css';
+import About from '../about/about.component';
 
 Modal.setAppElement('#root');
 Modal.defaultStyles.overlay.backgroundColor = 'none';
@@ -18,16 +19,21 @@ const MyModal = ({ isOpen, contentClass, overlayClass, onToggleModal }) => {
       isOpen={isOpen}
       contentLabel={'About'}
       onRequestClose={onToggleModal}
-      closeTimeoutMS={300}
+      closeTimeoutMS={500}
     >
-      <h1>I AM A MODAL </h1>
+      {
+        {
+          'content-about content-about--open': <About classname={contentClass}/>,
+          'content-about content-about--close' : <About classname={contentClass}/>,
+        }[contentClass]
+      }
     </Modal>
   );
 };
 
 const matpStateToProps = (state) => {
-  const { isOpen, contentClass, overlayClass,  } = state.modal;
-  return { isOpen, contentClass, overlayClass, };
+  const { isOpen, contentClass, overlayClass } = state.modal;
+  return { isOpen, contentClass, overlayClass };
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -35,3 +41,11 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(matpStateToProps, mapDispatchToProps)(MyModal);
+
+// {(() => {
+//   switch(contentClass) {
+//     case contentClass.includes('content-about'):
+//         return <About/>;
+//       default: contentClass= null;
+//   }
+// })}
