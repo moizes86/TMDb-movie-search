@@ -10,7 +10,7 @@ export const RibbonsContainer = styled.div`
 export const Ribbon = styled.div`
   position: relative;
   margin: 1px auto;
-  background-color: #3498db;
+  background-color: #00c851;
 
   &.ribbonA {
     width: ${(props) => props.theme.ribbonSideLength + 5}px;

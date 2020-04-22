@@ -5,7 +5,7 @@ import { onToggleModal } from '../../redux/modal/modal.actions';
 
 import Modal from 'react-modal';
 
-import './my-modal.transitions.css';
+import './my-modal.styles.css';
 import About from '../about/about.component';
 
 Modal.setAppElement('#root');
