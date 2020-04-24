@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "my-app",
-=======
   "name": "tmdb-movies-search",
->>>>>>> e62714c127ed329f01a0ebbf509935779c8951a3
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,11 +15,7 @@
     "react": "^16.13.0",
     "react-autosuggest": "^9.4.3",
     "react-dom": "^16.13.0",
-<<<<<<< HEAD
-    "react-loader-spinner": "^3.1.14",
-=======
     "react-loader-spinner": "^3.1.5",
->>>>>>> e62714c127ed329f01a0ebbf509935779c8951a3
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
