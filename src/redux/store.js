@@ -10,7 +10,6 @@ const middlewares = [ thunk ];
 if (process.env.NODE_ENV === 'development') {
     middlewares.push(logger);
 }
-const middlewares = [ thunk, logger];
 
 const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
