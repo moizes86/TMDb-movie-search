@@ -58,13 +58,22 @@ export const AutoSuggestContainerStyled = styled.div`
     position: absolute;
     color: black;
     width: 95%;
+<<<<<<< HEAD
     margin-left: 10px;
+=======
+    margin-left:10px;
+>>>>>>> e62714c127ed329f01a0ebbf509935779c8951a3
     opacity: 0;
     transition: 0.6s ease-in-out;
 
     @media (max-width: 640px) {
+<<<<<<< HEAD
       margin-left: 0;
       width: 100%;
+=======
+      margin-left:0;
+      width:100%;
+>>>>>>> e62714c127ed329f01a0ebbf509935779c8951a3
     }
   }
 

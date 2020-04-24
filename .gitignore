@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
+=======
+
+#api_key
+/src/api_key.js
+>>>>>>> e62714c127ed329f01a0ebbf509935779c8951a3
