@@ -24,6 +24,9 @@ import { CSSTransition } from 'react-transition-group';
 import './transitions.css';
 
 const App = (props) => {
+
+  //  ** ** ** **
+  // SETTINGS
   const { mounted, isLoading, data } = props;
   const backgroundImg = {
     backgroundImage: `url(https://image.tmdb.org/t/p/w500${data.backdrop_path})`,
@@ -31,7 +34,9 @@ const App = (props) => {
   useEffect(() => {
     props.onFetchMovieAsync(data.movieID);
   }, []);
-
+  
+  //  ** ** ** **
+  // RENDER
   return isLoading ? (
     <LoaderContainer className='spinner-app'>
       <Loader type='TailSpin' color='#00BFFF' />
