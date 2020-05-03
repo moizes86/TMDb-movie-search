@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import GlobalFonts from './assets/fonts/fonts';
 
 import Header from './components/header/header.component';
@@ -23,46 +23,35 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { CSSTransition } from 'react-transition-group';
 import './transitions.css';
 
-class App extends React.Component {
-  componentDidMount() {
-    const { onFetchMovieAsync, data } = this.props;
-    onFetchMovieAsync(data.movieID);
-  }
+const App = (props) => {
+  const { mounted, isLoading, data } = props;
+  const backgroundImg = {
+    backgroundImage: `url(https://image.tmdb.org/t/p/w500${data.backdrop_path})`,
+  };
+  useEffect(() => {
+    props.onFetchMovieAsync(data.movieID);
+  }, []);
 
-  render() {
-    const { backdrop_path } = this.props.data;
-    const { mounted, isLoading } = this.props;
-
-    const background =
-      backdrop_path !== (undefined || '---')
-        ? {
-            backgroundImage: `url(https://image.tmdb.org/t/p/w500${backdrop_path})`,
-          }
-        : {
-            backgroundColor: 'black',
-          };
-
-    return isLoading ? (
-      <LoaderContainer className='spinner-app'>
-        <Loader type='TailSpin' color='#00BFFF' />
-      </LoaderContainer>
-    ) : (
-      <CSSTransition in={mounted} appear={true} timeout={500} classNames='fade'>
-        <AppBackgroundImage style={background}>
-          <FixedBackgroundGradient>
-            <GlobalFonts />
-            <AppPadding>
-            <MyModal/>
-              <Header />
-              <MovieContainer />
-              <Footer />
-            </AppPadding>
-          </FixedBackgroundGradient>
-        </AppBackgroundImage>
-      </CSSTransition>
-    );
-  }
-}
+  return isLoading ? (
+    <LoaderContainer className='spinner-app'>
+      <Loader type='TailSpin' color='#00BFFF' />
+    </LoaderContainer>
+  ) : (
+    <CSSTransition in={mounted} appear={true} timeout={500} classNames='fade'>
+      <AppBackgroundImage style={backgroundImg}>
+        <FixedBackgroundGradient>
+          <GlobalFonts />
+          <AppPadding>
+            <MyModal />
+            <Header />
+            <MovieContainer />
+            <Footer />
+          </AppPadding>
+        </FixedBackgroundGradient>
+      </AppBackgroundImage>
+    </CSSTransition>
+  );
+};
 
 const mapStateToProps = (state) => {
   const { movieID, data, mounted, isLoading } = state.mainPage;
