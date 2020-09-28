@@ -33,7 +33,8 @@ const App = (props) => {
   };
   useEffect(() => {
     props.onFetchMovieAsync(data.movieID);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
   
   //  ** ** ** **
   // RENDER
