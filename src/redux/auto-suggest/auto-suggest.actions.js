@@ -1,7 +1,7 @@
 import AutoSuggestTypes from './auto-suggest.types';
 import { getValue, renderSuggestion } from './auto-suggest.utils';
 
-const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const updateInputValue = (event, value ) => {
   if (value.length !== undefined) {
