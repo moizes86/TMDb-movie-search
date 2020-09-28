@@ -3,7 +3,7 @@ import MainPageTypes from './main-page.types';
 const INITIAL_STATE = {
   mounted: true,
   isLoading: true,
-  data: {movieID: '398978'},
+  data: {id: '398978'},
   errorMessage: ''
 };
 

@@ -1,3 +1,5 @@
+
+  
 import React, { useEffect } from 'react';
 import GlobalFonts from './assets/fonts/fonts';
 
@@ -27,13 +29,13 @@ const App = (props) => {
 
   //  ** ** ** **
   // SETTINGS
-  const { mounted, isLoading, data } = props;
+  const { mounted, isLoading, data, onFetchMovieAsync } = props;
   const backgroundImg = {
     backgroundImage: `url(https://image.tmdb.org/t/p/w500${data.backdrop_path})`,
   };
   useEffect(() => {
-    props.onFetchMovieAsync(data.movieID);
-  },[]); // eslint-disable-line react-hooks/exhaustive-deps
+    onFetchMovieAsync(data.id);
+  },[onFetchMovieAsync, data.id]);
   
   //  ** ** ** **
   // RENDER
@@ -68,3 +70,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
