@@ -1,6 +1,6 @@
 import AutoSuggestTypes from './auto-suggest.types';
 import { getValue, renderSuggestion } from './auto-suggest.utils';
-import API_KEY from '../../api_key';
+import config from '../../config.js';
 
 export const updateInputValue = (event, value ) => {
   if (value.length !== undefined) {
@@ -15,7 +15,7 @@ export const updateInputValue = (event, value ) => {
 
 export const loadSuggestionsAsync = (value) => {
   return (dispatch) => {
-    let url = `https://api.themoviedb.org/3/search/movie?&api_key=${API_KEY}&query=${value}`;
+    let url = `https://api.themoviedb.org/3/search/movie?&api_key=${config.MY_KEY}&query=${value}`;
     if (value.length > 2) {
       dispatch(loadSuggestionsStart());
 

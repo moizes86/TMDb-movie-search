@@ -1,13 +1,13 @@
 import MainPageTypes from './main-page.types';
 import { formatData } from './main-page.utils';
 
-import API_KEY from '../../api_key';
+import config from '../../config';
 
-
+console.log(config);
 
 export const onFetchMovieAsync = (movieID) => {
   return dispatch => {
-    const url = `https://api.themoviedb.org/3/movie/${movieID}?&api_key=${API_KEY}`;
+    const url = `https://api.themoviedb.org/3/movie/${movieID}?&api_key=${config.MY_KEY}`;
     dispatch(onFetchMovieStart());
 
     fetch(url).then(res =>
