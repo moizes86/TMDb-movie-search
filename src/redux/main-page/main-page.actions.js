@@ -1,11 +1,11 @@
 import MainPageTypes from './main-page.types';
 import { formatData } from './main-page.utils';
 
-const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+// const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const onFetchMovieAsync = (movieID) => {
   return dispatch => {
-    const url = `https://api.themoviedb.org/3/movie/${movieID}?&api_key=${API_KEY}`;
+    const url = `https://api.themoviedb.org/3/movie/${movieID}?&api_key=${process.env.API_KEY}`;
     dispatch(onFetchMovieStart());
 
     fetch(url).then(res =>
